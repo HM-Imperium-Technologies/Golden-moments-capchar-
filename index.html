@@ -3,162 +3,274 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photography Service Agreement</title>
+  <title>Golden Moments Capture - Photography Service Agreement</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Noto Sans Gujarati', sans-serif; }
+    body { font-family: 'Noto Sans Gujarati', sans-serif; background-color: #0b0f17; color: #e2e8f0; }
+    .luxury-font { font-family: 'Cinzel', serif; }
+    .gold-text { color: #f59e0b; }
+    .gold-border { border-color: #d97706; }
+    .gold-gradient { background: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #b45309 100%); }
     @media print {
+      body { background-color: #ffffff !important; color: #000000 !important; }
       .no-print { display: none !important; }
-      .print-page { box-shadow: none !important; border: none !important; margin: 0 !important; width: 100% !important; padding: 0 !important; }
+      .print-box { border: 1px solid #ccc !important; box-shadow: none !important; color: #000 !important; background: #fff !important; }
+      .print-text-dark { color: #111827 !important; }
     }
   </style>
 </head>
-<body class="bg-slate-100 text-slate-800">
-  <div class="max-w-4xl mx-auto p-4 sm:p-8">
-    
-    <!-- Action Bar -->
-    <div class="no-print flex justify-between items-center bg-white p-4 rounded-xl shadow-sm mb-6 border border-slate-200">
-      <div>
-        <h1 class="text-xl font-bold text-slate-900">ફોટોગ્રાફી સર્વિસ એગ્રીમેન્ટ</h1>
-        <p class="text-xs text-slate-500">વિગતો ભરો અને પ્રિન્ટ / PDF ડાઉનલોડ કરો</p>
+<body class="min-h-screen pb-12">
+
+  <!-- Header Banner -->
+  <header class="border-b border-amber-900/40 bg-black/60 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="text-center sm:text-left">
+        <h1 class="luxury-font text-2xl font-bold tracking-wider gold-text uppercase">Golden Moments Capture</h1>
+        <p class="text-xs text-amber-200/70 tracking-widest uppercase">Professional Event & Portrait Photography</p>
       </div>
-      <button onclick="window.print()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-5 py-2.5 rounded-lg shadow transition flex items-center gap-2">
-        <span>📄 PDF સેવ / પ્રિન્ટ</span>
+      <button onclick="window.print()" class="no-print text-xs border border-amber-500/50 hover:bg-amber-500/10 text-amber-300 px-4 py-2 rounded-full transition flex items-center gap-1.5 shadow-sm">
+        <span>📄 સેવ / પ્રિન્ટ PDF</span>
       </button>
     </div>
+  </header>
 
-    <!-- Agreement Paper -->
-    <div class="print-page bg-white p-6 sm:p-10 rounded-2xl shadow-md border border-slate-200 text-sm leading-relaxed">
+  <main class="max-w-4xl mx-auto px-4 mt-8">
+    <form id="agreementForm" onsubmit="submitForm(event)" class="print-box bg-slate-900/90 border border-amber-500/30 rounded-2xl p-6 sm:p-10 shadow-2xl backdrop-blur-sm">
       
-      <!-- Header -->
-      <div class="border-b pb-4 mb-6 text-center">
-        <h2 class="text-2xl font-bold text-slate-900 tracking-wide">ફોટોગ્રાફી સર્વિસ એગ્રીમેન્ટ</h2>
-        <p class="text-slate-500 text-xs tracking-wider uppercase mt-1">Photography Service Agreement</p>
+      <!-- Title -->
+      <div class="text-center pb-6 border-b border-amber-500/20 mb-8">
+        <span class="text-xs uppercase tracking-widest text-amber-400 font-semibold px-3 py-1 rounded-full bg-amber-950/60 border border-amber-700/50">સત્તાવાર કરાર</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">ફોટોગ્રાફી સર્વિસ એગ્રીમેન્ટ</h2>
+        <p class="text-xs text-slate-400 mt-1">શૂટ બુકિંગ અને કાયદેસર સંમતિ પત્રક</p>
       </div>
 
-      <!-- Section 1: Details Form -->
-      <div class="mb-6">
-        <h3 class="font-bold text-base text-indigo-900 border-b pb-1 mb-3">૧. ક્લાયન્ટ અને ઇવેન્ટ વિગતો (Client & Event Details)</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- ૧. ક્લાયન્ટ અને ઇવેન્ટ વિગતો -->
+      <section class="mb-10">
+        <h3 class="text-base font-bold text-amber-400 border-l-4 border-amber-500 pl-3 mb-5 flex items-center justify-between">
+          <span>૧. ક્લાયન્ટ અને ઇવેન્ટ વિગતો (Client & Event Details)</span>
+        </h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
           <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1">ક્લાયન્ટનું નામ:</label>
-            <input type="text" placeholder="પૂરું નામ દાખલ કરો" class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1">મોબાઇલ નંબર:</label>
-            <input type="tel" placeholder="૧૦ અંકનો મોબાઈલ નંબર" class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1">ઇમેઇલ સરનામું:</label>
-            <input type="email" placeholder="example@email.com" class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+            <label class="block font-medium text-slate-300 mb-1.5">ક્લાયન્ટનું પૂરું નામ *</label>
+            <input required type="text" id="clientName" placeholder="દા.ત. રમેશભાઈ પટેલ" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-white focus:border-amber-500 focus:outline-none">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1">શૂટ / ઇવેન્ટની તારીખ:</label>
-            <input type="date" class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+            <label class="block font-medium text-slate-300 mb-1.5">મોબાઇલ નંબર *</label>
+            <input required type="tel" id="clientPhone" placeholder="૧૦ અંકનો મોબાઈલ નંબર" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-white focus:border-amber-500 focus:outline-none">
           </div>
-          <div class="md:col-span-2">
-            <label class="block text-xs font-semibold text-slate-600 mb-1">શૂટનું સ્થળ / સરનામું:</label>
-            <input type="text" placeholder="સરનામું અને લોકેશન" class="w-full border rounded-md p-2 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+          <div class="sm:col-span-2">
+            <label class="block font-medium text-slate-300 mb-1.5">ઇમેઇલ સરનામું</label>
+            <input type="email" id="clientEmail" placeholder="તમારું ઇમેઇલ (જો હોય તો)" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-white focus:border-amber-500 focus:outline-none">
           </div>
-        </div>
-
-        <div class="mt-4">
-          <label class="block text-xs font-semibold text-slate-600 mb-1.5">સેવાનો પ્રકાર (Service Type):</label>
-          <div class="flex flex-wrap gap-4 text-xs">
-            <label class="flex items-center gap-1.5 cursor-pointer">
-              <input type="checkbox" class="rounded text-indigo-600 focus:ring-indigo-500"> વેડિંગ / ઇવેન્ટ (Wedding/Event)
-            </label>
-            <label class="flex items-center gap-1.5 cursor-pointer">
-              <input type="checkbox" class="rounded text-indigo-600 focus:ring-indigo-500"> બેબી / કિડ્સ શૂટ (Baby Shoot)
-            </label>
-            <label class="flex items-center gap-1.5 cursor-pointer">
-              <input type="checkbox" class="rounded text-indigo-600 focus:ring-indigo-500"> પ્રોડક્ટ ફોટોગ્રાફી (Product Photography)
-            </label>
+          <div class="sm:col-span-2">
+            <label class="block font-medium text-slate-300 mb-1.5">શૂટ / ઇવેન્ટનું ચોક્કસ સરનામું (સ્થળ) *</label>
+            <input required type="text" id="shootLocation" placeholder="સ્થળ, હોલ કે ગામનું નામ" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-white focus:border-amber-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block font-medium text-slate-300 mb-1.5">શૂટ / ઇવેન્ટની તારીખ *</label>
+            <input required type="date" id="eventDate" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-white focus:border-amber-500 focus:outline-none">
+          </div>
+          <div>
+            <label class="block font-medium text-slate-300 mb-1.5">સેવાનો પ્રકાર (Service Type) *</label>
+            <select id="serviceType" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-white focus:border-amber-500 focus:outline-none">
+              <option value="વેડિંગ / ઇવેન્ટ ફોટોગ્રાફી">વેડિંગ / ઇવેન્ટ (Wedding/Event)</option>
+              <option value="બેબી / કિડ્સ શૂટ">બેબી / કિડ્સ શૂટ (Baby Shoot)</option>
+              <option value="પ્રોડક્ટ ફોટોગ્રાફી">પ્રોડક્ટ ફોટોગ્રાફી (Product Photography)</option>
+              <option value="પોર્ટરઇટ / મોડેલિંગ શૂટ">પોર્ટરઇટ / મોડેલિંગ શૂટ</option>
+            </select>
           </div>
         </div>
 
         <!-- Payment Calculations -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-slate-50 p-3 rounded-lg border mt-4">
+        <div class="mt-5 bg-black/40 border border-amber-500/20 rounded-xl p-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label class="block text-[11px] font-semibold text-slate-500">કુલ નક્કી કરેલી રકમ (₹):</label>
-            <input type="number" id="total" oninput="calcBalance()" placeholder="0" class="w-full border rounded p-1.5 text-sm font-semibold bg-white outline-none">
+            <label class="block text-[11px] font-semibold text-slate-400 mb-1">કુલ પેકેજ રકમ (₹) *</label>
+            <input required type="number" id="totalAmount" oninput="calculateBalance()" placeholder="0" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-amber-400 font-bold focus:border-amber-500 focus:outline-none">
           </div>
           <div>
-            <label class="block text-[11px] font-semibold text-slate-500">ટોકન / એડવાન્સ રકમ (₹):</label>
-            <input type="number" id="advance" oninput="calcBalance()" placeholder="0" class="w-full border rounded p-1.5 text-sm font-semibold bg-white outline-none">
+            <label class="block text-[11px] font-semibold text-slate-400 mb-1">ટોકન / એડવાન્સ ચૂકવેલ (₹) *</label>
+            <input required type="number" id="advanceAmount" oninput="calculateBalance()" placeholder="0" class="w-full bg-slate-950 border border-slate-700 rounded-lg p-2 text-emerald-400 font-bold focus:border-amber-500 focus:outline-none">
           </div>
           <div>
-            <label class="block text-[11px] font-semibold text-slate-500">બાકી રકમ (Balance Due ₹):</label>
-            <input type="text" id="balance" readonly placeholder="0" class="w-full border rounded p-1.5 text-sm font-bold bg-slate-100 text-rose-600 outline-none cursor-not-allowed">
+            <label class="block text-[11px] font-semibold text-slate-400 mb-1">બાકી રકમ (Balance Due)</label>
+            <input type="text" id="balanceAmount" readonly value="₹ 0" class="w-full bg-slate-900 border border-slate-800 rounded-lg p-2 text-rose-400 font-bold cursor-not-allowed">
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Section 2: Terms & Conditions -->
-      <div class="mb-6 space-y-3">
-        <h3 class="font-bold text-base text-indigo-900 border-b pb-1">૨. મુખ્ય નિયમો અને શરતો (Key Terms & Conditions)</h3>
-        
-        <div class="space-y-1.5 text-slate-700 text-xs">
-          <p class="font-semibold text-slate-900">• પેમેન્ટ શેડ્યૂલ:</p>
-          <ul class="list-disc ml-5 space-y-0.5">
-            <li>બુકિંગ કન્ફર્મ કરવા માટે ૩૦% એડવાન્સ ચૂકવવાના રહેશે (જે સંપૂર્ણપણે નોન-રીફંડેબલ છે).</li>
-            <li>વેડિંગ/ઇવેન્ટ માટે ૫૦% શૂટના દિવસે અને બાકીના ૨૦% ફાઇનલ ડેટા/આલ્બમ ડિલિવરી સમયે ચૂકવવાના રહેશે.</li>
-            <li>બેબી અને પ્રોડક્ટ શૂટ માટે બાકીની ૭૦% રકમ શૂટ પૂર્ણ થતાં જ અથવા ફાઇનલ ડિલિવરી પહેલાં ક્લિયર કરવાની રહેશે.</li>
-          </ul>
+      <!-- ૨. પેમેન્ટ ડિટેલ્સ & UPI -->
+      <section class="mb-10 p-4 rounded-xl bg-amber-950/20 border border-amber-500/30">
+        <h3 class="text-sm font-bold text-amber-300 mb-2">💳 પેમેન્ટ / UPI વિગતો</h3>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          એડવાન્સ પેમેન્ટ કરવા માટે Google Pay / PhonePe / Paytm દ્વારા ચૂકવણી કરી શકો છો.<br>
+          <span class="text-amber-400 font-semibold">UPI ID:</span> <span class="bg-black/50 px-2 py-0.5 rounded border border-slate-700 select-all">તમારો-UPI-ID@okaxis</span>
+        </p>
+      </section>
 
-          <p class="font-semibold text-slate-900 pt-1">• સમય અને ડિલિવરી:</p>
-          <ul class="list-disc ml-5 space-y-0.5">
-            <li>શૂટ નક્કી કરેલા કલાકો પૂરતું રહેશે; ક્લાયન્ટ તરફથી મોડું થાય તો પણ સમય બુકિંગ મુજબ જ ગણાશે.</li>
-            <li>રો સિલેક્શન શૂટ પછી ૩–૫ દિવસમાં અપાશે, જે ૧૫ દિવસમાં પૂરું કરવાનું રહેશે.</li>
-            <li>એડિટેડ ફોટા સિલેક્શન મળ્યાના ૧૦–૧૫ દિવસમાં અને આલ્બમ ૧૫–૨૦ દિવસમાં ડિલિવર થશે.</li>
-            <li>અનએડિટેડ (RAW) ફાઇલ્સ પેકેજમાં સામેલ નથી. તેના માટે અલગ ચાર્જ રહેશે.</li>
-            <li>ફોટો એડિટિંગમાં વધુમાં વધુ ૨ વખત સુધારા (Revisions) મળશે.</li>
-          </ul>
+      <!-- ૩. મુખ્ય નિયમો અને શરતો -->
+      <section class="mb-10">
+        <h3 class="text-base font-bold text-amber-400 border-l-4 border-amber-500 pl-3 mb-4">
+          ૨. મુખ્ય નિયમો અને શરતો (Key Terms & Conditions)
+        </h3>
+        <div class="text-xs text-slate-300 space-y-3 bg-slate-950/50 p-4 rounded-xl border border-slate-800">
+          <div>
+            <strong class="text-amber-300">• પેમેન્ટ શેડ્યૂલ:</strong>
+            <ul class="list-disc ml-5 mt-1 space-y-1 text-slate-400">
+              <li>બુકિંગ કન્ફર્મ કરવા ૩૦% એડવાન્સ ચૂકવવાના રહેશે (જે નોન-રીફંડેબલ છે).</li>
+              <li>વેડિંગ/ઇવેન્ટ માટે ૫૦% શૂટના દિવસે અને બાકીના ૨૦% ફાઇનલ ડેટા ડિલિવરી સમયે ચૂકવવાના રહેશે.</li>
+              <li>બેબી/પ્રોડક્ટ શૂટ માટે બાકીની ૭૦% રકમ શૂટ પૂરું થતાં જ ચૂકવવાની રહેશે.</li>
+            </ul>
+          </div>
+          <div>
+            <strong class="text-amber-300">• ડિલિવરી અને રો ફાઇલ્સ (RAW Files):</strong>
+            <ul class="list-disc ml-5 mt-1 space-y-1 text-slate-400">
+              <li>રો સિલેક્શન શૂટ પછી ૩–૫ દિવસમાં મોકલાશે. ક્લાયન્ટે ૧૫ દિવસમાં સિલેક્શન પૂરું કરવાનું રહેશે.</li>
+              <li>એડિટેડ ફોટો ૧૦–૧૫ દિવસમાં અને આલ્બમ ૧૫–૨૦ દિવસમાં ડિલિવર થશે.</li>
+              <li>અનએડિટેડ (RAW) ફાઇલ્સ પેકેજમાં સામેલ નથી. તેનો અલગથી ચાર્જ રહેશે. ફોટો એડિટિંગમાં વધુમાં વધુ ૨ વખત સુધારા મળશે.</li>
+            </ul>
+          </div>
+          <div>
+            <strong class="text-amber-300">• સાધનો અને પ્રાઇવસી:</strong>
+            <ul class="list-disc ml-5 mt-1 space-y-1 text-slate-400">
+              <li>શૂટ દરમિયાન ક્લાયન્ટ કે મહેમાનો દ્વારા સાધનોને નુકસાન થાય તો તેનું વળતર ક્લાયન્ટે ચૂકવવાનું રહેશે.</li>
+              <li>ફોટોગ્રાફ્સના કૉપીરાઇટ સ્ટુડિયો પાસે રહેશે જે પ્રમોશન/પોર્ટફોલિયો માટે વપરાઈ શકે છે.</li>
+            </ul>
+          </div>
 
-          <p class="font-semibold text-slate-900 pt-1">• સાધનો અને પ્રાઇવસી:</p>
-          <ul class="list-disc ml-5 space-y-0.5">
-            <li>ઇવેન્ટ દરમિયાન મહેમાનો દ્વારા કેમેરા/સાધનોને નુકસાન થાય તો તેનું વળતર ક્લાયન્ટે ચૂકવવાનું રહેશે.</li>
-            <li>તમામ ફોટોગ્રાફ્સના કૉપીરાઇટ ફોટોગ્રાફર પાસે રહેશે (પોર્ટફોલિયો/પ્રમોશન હેતુ).</li>
-          </ul>
-
-          <div class="mt-2 bg-indigo-50/50 p-2 rounded border border-indigo-100">
-            <label class="flex items-center gap-2 cursor-pointer font-medium text-indigo-950">
-              <input type="checkbox" class="rounded text-indigo-600 focus:ring-indigo-500">
-              હા, મારે સંપૂર્ણ પ્રાઇવસી જોઈએ છે (Do Not Post on Social Media).
+          <div class="pt-2 border-t border-slate-800 mt-2">
+            <label class="flex items-center gap-2.5 cursor-pointer text-slate-200">
+              <input type="checkbox" id="privacyOpt" class="w-4 h-4 rounded text-amber-500 accent-amber-500">
+              <span>હા, મારે સંપૂર્ણ પ્રાઇવસી જોઈએ છે (સોશિયલ મીડિયા પર ફોટો પોસ્ટ ન કરવા).</span>
             </label>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Section 3: Signatures -->
-      <div>
-        <h3 class="font-bold text-base text-indigo-900 border-b pb-1 mb-3">૩. સંમતિ અને સહી (Acknowledgement & Signatures)</h3>
-        <p class="text-[11px] text-slate-500 mb-6">હું/અમે ઉપર દર્શાવેલા તમામ નિયમો અને શરતો ધ્યાનપૂર્વક વાંચ્યા છે અને તેની સાથે સહમત થઈને આ એગ્રીમેન્ટ સ્વીકારીએ છીએ.</p>
+      <!-- ૪. ડિજિટલ સાઇન પેડ (Touch Signature Pad) -->
+      <section class="mb-10">
+        <h3 class="text-base font-bold text-amber-400 border-l-4 border-amber-500 pl-3 mb-4">
+          ૩. સંમતિ અને ડિજિટલ સહી (Digital Signature)
+        </h3>
+        <p class="text-xs text-slate-400 mb-3">નીચે આપેલા બોક્સમાં તમારી આંગળી અથવા ટચ પેનથી સહી કરો:</p>
         
-        <div class="grid grid-cols-2 gap-8 pt-4">
-          <div class="border-t border-slate-400 text-center pt-2">
-            <p class="font-semibold text-xs text-slate-800">ક્લાયન્ટની સહી (Client Signature)</p>
-            <p class="text-[10px] text-slate-400 mt-1">તારીખ: ____ / ____ / ૨૦૨___</p>
-          </div>
-          <div class="border-t border-slate-400 text-center pt-2">
-            <p class="font-semibold text-xs text-slate-800">ફોટોગ્રાફર / સ્ટુડિયો વતી સહી</p>
-            <p class="text-[10px] text-slate-400 mt-1">તારીખ: ____ / ____ / ૨૦૨___</p>
+        <div class="bg-slate-950 p-2 rounded-xl border border-slate-700">
+          <canvas id="sigCanvas" class="w-full h-40 bg-slate-900 rounded-lg cursor-crosshair touch-none"></canvas>
+          <div class="flex justify-between items-center mt-2 px-1">
+            <span class="text-[11px] text-slate-500">સ્ક્રીન પર સાઇન કરો</span>
+            <button type="button" onclick="clearSignature()" class="no-print text-xs text-rose-400 hover:text-rose-300 underline">
+              સહી સાફ કરો (Clear)
+            </button>
           </div>
         </div>
+      </section>
+
+      <!-- Submit Buttons -->
+      <div class="no-print flex flex-col sm:flex-row gap-3 pt-4 border-t border-slate-800">
+        <button type="submit" class="flex-1 gold-gradient hover:opacity-95 text-slate-950 font-bold py-3.5 px-6 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+          <span>📲 સંમતિ આપો અને WhatsApp પર મોકલો</span>
+        </button>
       </div>
 
-    </div>
-  </div>
+    </form>
+  </main>
 
   <script>
-    function calcBalance() {
-      const total = parseFloat(document.getElementById('total').value) || 0;
-      const advance = parseFloat(document.getElementById('advance').value) || 0;
+    // ૧. ગણતરી લોજિક
+    function calculateBalance() {
+      const total = parseFloat(document.getElementById('totalAmount').value) || 0;
+      const advance = parseFloat(document.getElementById('advanceAmount').value) || 0;
       const balance = Math.max(0, total - advance);
-      document.getElementById('balance').value = '₹ ' + balance.toLocaleString('en-IN');
+      document.getElementById('balanceAmount').value = '₹ ' + balance.toLocaleString('en-IN');
+    }
+
+    // ૨. ટચ અને માઉસ સિગ્નેચર પેડ
+    const canvas = document.getElementById('sigCanvas');
+    const ctx = canvas.getContext('2d');
+    let isDrawing = false;
+    let hasSigned = false;
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 2.5;
+      ctx.lineCap = 'round';
+    }
+    window.addEventListener('resize', resizeCanvas);
+    setTimeout(resizeCanvas, 200);
+
+    function getPos(e) {
+      const rect = canvas.getBoundingClientRect();
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+      return { x: clientX - rect.left, y: clientY - rect.top };
+    }
+
+    function startDraw(e) {
+      isDrawing = true;
+      hasSigned = true;
+      const pos = getPos(e);
+      ctx.beginPath();
+      ctx.moveTo(pos.x, pos.y);
+      e.preventDefault();
+    }
+    function draw(e) {
+      if (!isDrawing) return;
+      const pos = getPos(e);
+      ctx.lineTo(pos.x, pos.y);
+      ctx.stroke();
+      e.preventDefault();
+    }
+    function stopDraw() { isDrawing = false; }
+
+    canvas.addEventListener('mousedown', startDraw);
+    canvas.addEventListener('mousemove', draw);
+    window.addEventListener('mouseup', stopDraw);
+    canvas.addEventListener('touchstart', startDraw, { passive: false });
+    canvas.addEventListener('touchmove', draw, { passive: false });
+    window.addEventListener('touchend', stopDraw);
+
+    function clearSignature() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      hasSigned = false;
+    }
+
+    // ૩. WhatsApp ડાયરેક્ટ સબમિશન
+    function submitForm(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const service = document.getElementById('serviceType').value;
+      const date = document.getElementById('eventDate').value;
+      const location = document.getElementById('shootLocation').value.trim();
+      const total = document.getElementById('totalAmount').value;
+      const advance = document.getElementById('advanceAmount').value;
+      const balance = document.getElementById('balanceAmount').value;
+      const privacy = document.getElementById('privacyOpt').checked ? 'હા (Private Shoot)' : 'ના (Portfolio Allowed)';
+
+      // તમારો 10-અંકનો વોટ્સએપ નંબર અહીં લખો (91 સાથે)
+      const myWhatsAppNumber = "91XXXXXXXXXX"; 
+
+      const msg = `*📸 Golden Moments Capture - Service Agreement*%0A%0A` +
+        `*ક્લાયન્ટ:* ${name}%0A` +
+        `*મોબાઈલ:* ${phone}%0A` +
+        `*ઇવેન્ટ:* ${service}%0A` +
+        `*તારીખ:* ${date}%0A` +
+        `*સ્થળ:* ${location}%0A%0A` +
+        `*કુલ રકમ:* ₹${total}%0A` +
+        `*એડવાન્સ પેઇડ:* ₹${advance}%0A` +
+        `*બાકી રકમ:* ${balance}%0A` +
+        `*સોશિયલ મીડિયા પ્રાઇવસી:* ${privacy}%0A` +
+        `*ડિજિટલ સહી:* ${hasSigned ? 'કરેલ છે (Signed)' : 'બાકી છે'}%0A%0A` +
+        `_હું તમામ નિયમો અને શરતો સાથે સહમત થઈને આ એગ્રીમેન્ટ સ્વીકારું છું._`;
+
+      const waURL = `https://api.whatsapp.com/send?phone=${9512744341}&text=${msg}`;
+      window.open(waURL, '_blank');
     }
   </script>
 </body>
 </html>
-    
